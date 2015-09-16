@@ -66,12 +66,16 @@ while True:
     initiate_motors()
     if key == "z":
         print("Go strait !")
+        go_strait()
     elif key == "s":
         print("Go back !")
+        go_back()
     elif key == "q":
         print("Go left")
+        go_left()
     elif key == "d":
         print("Go right")
+        go_right()
     elif key == "p": # Always add a way to break, cause CRTL-C doesn't work...
         stop()
         break

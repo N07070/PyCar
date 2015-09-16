@@ -17,16 +17,34 @@
 import RPi.GPIO as gpio
 import time
 
+time.sleep(1.4)
+gpio.cleanup()
+
 
 class Motors(object):
     """docstring for Motors"""
 
-    def __init__(self, arg):
-        super(Motors, self).__init__()
-        self.arg = arg
+    def initiate_motors(self):
+        gpio.setmode(gpio.BOARD)
 
-    def go_strait(self):
-        pass
+        gpio.setup(7, gpio.OUT)
+        gpio.setup(11, gpio.OUT)
+        gpio.setup(13, gpio.OUT)
+        gpio.setup(15, gpio.OUT)
+
+    def go_strait(self, time_roll):
+        gpio.output(7, False)
+        gpio.output(11, True)
+        gpio.output(13, True)
+        gpio.output(15, False)
+
+        time.sleep(time_roll)
+
+        gpio.output(7, False)
+        gpio.output(11, False)
+        gpio.output(13, False)
+        gpio.output(15, False)
+
 
     def go_back(self):
         pass

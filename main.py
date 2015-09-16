@@ -62,6 +62,7 @@ def stop():
     gpio.cleanup()
 
 print("Going strait !")
+initiate_motors()
 go_strait()
 time.sleep(1)
 stop()
